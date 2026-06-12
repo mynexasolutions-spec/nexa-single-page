@@ -2197,7 +2197,7 @@ body {
 }
 
 .wd-cms-desc {
-  font-size: 0.97rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: #444;
   margin-bottom: 2rem;
@@ -2385,7 +2385,7 @@ body {
   }
 
   .wd-panel-desc {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.68;
     margin-bottom: 1.2rem;
   }
@@ -2829,8 +2829,8 @@ body {
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  padding: 24px 0;
+  gap: 0.75rem;
+  padding: 12px 0;
 }
 .partners-grid .partner-card {
   background: #fdfdfd;
@@ -3342,6 +3342,16 @@ a.nav-cta,
   }
   .nav-btns {
     display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-name {
+    font-size: 1.15rem;
+  }
+  .logo img {
+    width: 36px !important;
+    height: 36px !important;
   }
 }
 
@@ -4142,7 +4152,7 @@ a.nav-cta,
 .service-card p {
   color: #111;
   line-height: 1.7;
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 1.8rem;
   max-width: 85%;
 }
@@ -4224,10 +4234,45 @@ a.nav-cta,
 }
 
 .wd-certified-desc {
-  font-size: 0.97rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: #444;
   margin-bottom: 1.1rem;
+}
+
+.wd-certified-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.wd-certified-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+.wd-certified-list li::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  background-color: #0a0a0a;
+  border-radius: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='2 6 5 9 10 3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 11px;
+}
+
+.wd-panel-list li {
+  color: #111;
 }
 
 .wd-certified-btns {
@@ -4401,9 +4446,9 @@ a.nav-cta,
   text-transform: uppercase;
   padding: 0.5rem 1.1rem;
   border-radius: 999px;
-  border: 1.5px solid rgba(0, 0, 0, 0.15);
-  color: #444;
-  background: #f9f9f7;
+  border: 1.5px solid #111;
+  color: #111;
+  background: transparent;
   transition: all 0.3s ease;
 }
 
@@ -4511,18 +4556,18 @@ a.nav-cta,
 }
 
 .wd-pillar-title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.35rem;
-  letter-spacing: 0.02em;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #0a0a0a;
-  margin-bottom: 0.3rem;
-  line-height: 1;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
 }
 
 .wd-pillar-desc {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.7;
-  color: #666;
+  color: #555;
 }
 
 .wd-usp {
@@ -4962,7 +5007,7 @@ a.nav-cta,
 .brands-sub {
   text-align: center;
   font-family: "DM Sans", sans-serif;
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #555;
   max-width: 680px;
@@ -5130,6 +5175,11 @@ a.nav-cta,
   border: 1.5px solid #EA4335;
   color: #fff;
 }
+.wd-team-link--whatsapp {
+  background: #25D366;
+  border: 1.5px solid #25D366;
+  color: #fff;
+}
 
 #book .wd-hero-form-title {
   margin-bottom: 2.8rem;
@@ -5204,6 +5254,8 @@ a.nav-cta,
   color: var(--ink);
   letter-spacing: -0.015em;
   transition: color 0.2s;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 .faq-question:hover {
   color: var(--gray-700);
@@ -5513,7 +5565,7 @@ section {
 }
 .footer-brand p {
   color: #ffffff;
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin-top: 1rem;
   max-width: 280px;
@@ -5554,7 +5606,7 @@ section {
 .footer-col ul li a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 1rem;
   transition: color 0.2s;
 }
 .footer-col ul li a:hover {
@@ -7146,6 +7198,8 @@ section {
   color: var(--ink);
   letter-spacing: -0.015em;
   transition: color 0.2s;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 .faq-question:hover {
   color: var(--gray-700);
@@ -7759,7 +7813,7 @@ footer {
     margin-bottom: 0.7rem;
   }
   .wd-panel-desc {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.68;
     margin-bottom: 1.2rem;
   }
@@ -7836,11 +7890,13 @@ footer {
     border-radius: 10px;
   }
   .wd-pillar-title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+    font-weight: 700;
   }
   .wd-pillar-desc {
-    font-size: 0.88rem;
+    font-size: 1rem;
     line-height: 1.65;
+    color: #444;
   }
   .wd-pillar-dots {
     display: flex;
