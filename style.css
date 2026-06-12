@@ -3809,6 +3809,10 @@ a.nav-cta,
   text-transform: uppercase;
   color: #111;
   margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  white-space: nowrap;
 }
 .wd-hero-form-row input,
 .wd-hero-form-row select,
