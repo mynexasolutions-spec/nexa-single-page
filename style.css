@@ -4581,19 +4581,28 @@ a.nav-cta,
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .wd-usp-inner > .wd-reveal-left {
+    order: 2;
+  }
+  .wd-usp-right {
+    order: 1;
+  }
 }
 
 /* - RIGHT - bordered card list - */
 .wd-usp-right {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .wd-usp-card {
-  padding: 1.8rem 1.5rem;
+  padding: 1.4rem 1.3rem;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 16px;
@@ -8153,5 +8162,16 @@ footer {
   .popup-modal .wd-hero-form-grid {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 768px) {
+  .wd-certified-list,
+  .wd-certified-list li {
+    text-align: left;
+  }
+}
+.req-star {
+  color: #e53e3e;
+  margin-left: 2px;
+  font-weight: 700;
 }
 
