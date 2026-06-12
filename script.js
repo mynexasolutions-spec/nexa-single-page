@@ -1,5 +1,54 @@
 
 // --- Combined: main.js ---
+
+/* ── Google Sheets Lead Capture ── */
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxxuYla10zdkqm0r2vX2MP_89PrRTaB8pS7P3Kl-GThpTXBCHb6h0si6W_IFg3f4wQFPg/exec';
+
+function submitToSheets(formEl, source) {
+  const d = new FormData(formEl);
+  const payload = {
+    name: d.get('name') || '',
+    phone: d.get('phone') || '',
+    email: d.get('email') || '',
+    company: d.get('company') || '',
+    websiteType: d.get('website-type') || '',
+    message: d.get('message') || '',
+    source: source
+  };
+  fetch(SHEETS_URL, { method: 'POST', body: JSON.stringify(payload) }).catch(() => {});
+}
+
+/* Hero form */
+const heroLeadForm = document.getElementById('heroLeadForm');
+if (heroLeadForm) {
+  heroLeadForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitToSheets(heroLeadForm, 'Hero Form');
+    const btn = heroLeadForm.querySelector('button[type="submit"]');
+    if (btn) { btn.textContent = 'Submitted ✓'; btn.disabled = true; }
+    setTimeout(() => {
+      heroLeadForm.reset();
+      if (btn) { btn.textContent = 'Submit'; btn.disabled = false; }
+    }, 3500);
+  });
+}
+
+/* Popup form */
+const popupLeadForm = document.getElementById('popupLeadForm');
+if (popupLeadForm) {
+  popupLeadForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitToSheets(popupLeadForm, 'Popup Form');
+    const btn = popupLeadForm.querySelector('button[type="submit"]');
+    if (btn) { btn.textContent = 'Submitted ✓'; btn.disabled = true; }
+    setTimeout(() => {
+      popupLeadForm.reset();
+      if (btn) { btn.textContent = 'Submit'; btn.disabled = false; }
+      document.getElementById('leadPopupOverlay')?.classList.remove('open');
+      document.body.style.overflow = '';
+    }, 2500);
+  });
+}
 /* â”€â”€ Navbar scroll float â”€â”€ */
 const navbar = document.getElementById('navbar');
 if (navbar) {
@@ -425,15 +474,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form && success) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-      console.log('Booking Lead captured:', data);
+      submitToSheets(form, 'Contact Form');
 
       if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', {
-          'event_category': 'engagement',
-          'event_label': data.budget || 'unknown'
-        });
+        gtag('event', 'generate_lead', { 'event_category': 'engagement' });
       }
 
       form.style.display = 'none';
