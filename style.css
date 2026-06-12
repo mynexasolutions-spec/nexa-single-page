@@ -4591,6 +4591,12 @@ a.nav-cta,
   }
   .wd-usp-right {
     order: 1;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .wd-usp-inner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 9rem;
+    align-items: center;
   }
 }
 
@@ -5639,34 +5645,49 @@ section {
   gap: 0.75rem;
 }
 .social-btn {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    border-color 0.2s,
-    background 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
   text-decoration: none;
+  opacity: 0.9;
 }
 .social-btn:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-3px);
+  opacity: 1;
 }
 .social-btn svg {
-  width: 15px;
-  height: 15px;
-  stroke: rgba(255, 255, 255, 0.52);
+  width: 16px;
+  height: 16px;
   fill: none;
+  stroke: #fff;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: stroke 0.2s;
 }
-.social-btn:hover svg {
-  stroke: rgba(255, 255, 255, 0.9);
+/* LinkedIn — brand blue */
+.social-btn[aria-label="LinkedIn"] {
+  background: #0A66C2;
+  border: none;
+}
+/* Twitter / X — white background with black X */
+.social-btn[aria-label="Twitter / X"] {
+  background: #fff;
+  border: none;
+}
+.social-btn[aria-label="Twitter / X"] svg {
+  fill: #000;
+  stroke: none;
+  width: 15px;
+  height: 15px;
+}
+/* Instagram — brand gradient */
+.social-btn[aria-label="Instagram"] {
+  background: radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border: none;
 }
 
 .wd-cta-band {
